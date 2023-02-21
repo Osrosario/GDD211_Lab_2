@@ -285,8 +285,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 80723337}
-        m_TargetAssemblyTypeName: WeaponAssign, Assembly-CSharp
-        m_MethodName: AssignWeapon
+        m_TargetAssemblyTypeName: ImageAssigner, Assembly-CSharp
+        m_MethodName: AssignImage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1681,8 +1681,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 827567632}
-        m_TargetAssemblyTypeName: WeaponAssign, Assembly-CSharp
-        m_MethodName: AssignWeapon
+        m_TargetAssemblyTypeName: ImageAssigner, Assembly-CSharp
+        m_MethodName: AssignImage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1830,8 +1830,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 849875432}
-        m_TargetAssemblyTypeName: WeaponAssign, Assembly-CSharp
-        m_MethodName: AssignWeapon
+        m_TargetAssemblyTypeName: ImageAssigner, Assembly-CSharp
+        m_MethodName: AssignImage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1981,8 +1981,9 @@ GameObject:
   - component: {fileID: 956464453}
   - component: {fileID: 956464452}
   - component: {fileID: 956464451}
+  - component: {fileID: 956464454}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Start_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2006,8 +2007,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -186.6}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0, y: -177.5}
+  m_SizeDelta: {x: 90, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &956464451
 MonoBehaviour:
@@ -2053,9 +2054,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1924896809}
-        m_TargetAssemblyTypeName: Selection, Assembly-CSharp
-        m_MethodName: GetButton
+      - m_Target: {fileID: 956464454}
+        m_TargetAssemblyTypeName: WeaponSender, Assembly-CSharp
+        m_MethodName: SendWeapons
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2103,6 +2104,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 956464449}
   m_CullTransparentMesh: 1
+--- !u!114 &956464454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956464449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a511ae79fa809f48ab7df41ea3d7db0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneMaster: {fileID: 1924896807}
+  choice1Spr: {fileID: 187085651}
+  choice2Spr: {fileID: 253175769}
+  choice3Spr: {fileID: 552084833}
 --- !u!1 &1037010275
 GameObject:
   m_ObjectHideFlags: 0
@@ -2497,8 +2514,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1220257426}
-        m_TargetAssemblyTypeName: SendImage, Assembly-CSharp
-        m_MethodName: PassImage
+        m_TargetAssemblyTypeName: ImageSender, Assembly-CSharp
+        m_MethodName: SendImage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2558,11 +2575,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f5f474e701644c4ea9ebad97dc1a74a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ImagePass:
+  ImageSend:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1924896809}
-        m_TargetAssemblyTypeName: Selection, Assembly-CSharp
+        m_TargetAssemblyTypeName: ImageHolder, Assembly-CSharp
         m_MethodName: HoldImage
         m_Mode: 2
         m_Arguments:
@@ -2659,8 +2676,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1234285138}
-        m_TargetAssemblyTypeName: SendImage, Assembly-CSharp
-        m_MethodName: PassImage
+        m_TargetAssemblyTypeName: ImageSender, Assembly-CSharp
+        m_MethodName: SendImage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2720,11 +2737,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f5f474e701644c4ea9ebad97dc1a74a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ImagePass:
+  ImageSend:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1924896809}
-        m_TargetAssemblyTypeName: Selection, Assembly-CSharp
+        m_TargetAssemblyTypeName: ImageHolder, Assembly-CSharp
         m_MethodName: HoldImage
         m_Mode: 2
         m_Arguments:
@@ -3114,10 +3131,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: START
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3638,8 +3655,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1598765069}
-        m_TargetAssemblyTypeName: WeaponAssign, Assembly-CSharp
-        m_MethodName: AssignWeapon
+        m_TargetAssemblyTypeName: ImageAssigner, Assembly-CSharp
+        m_MethodName: AssignImage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3866,6 +3883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a511ae79fa809f48ab7df41ea3d7db0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneMaster: {fileID: 0}
   choice1Spr: {fileID: 187085651}
   choice2Spr: {fileID: 253175769}
   choice3Spr: {fileID: 552084833}
@@ -3955,8 +3973,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1901833935}
-        m_TargetAssemblyTypeName: SendButton, Assembly-CSharp
-        m_MethodName: PassImage
+        m_TargetAssemblyTypeName: ImageSender, Assembly-CSharp
+        m_MethodName: SendImage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4016,11 +4034,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f5f474e701644c4ea9ebad97dc1a74a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ImagePass:
+  ImageSend:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1924896809}
-        m_TargetAssemblyTypeName: Selection, Assembly-CSharp
+        m_TargetAssemblyTypeName: ImageHolder, Assembly-CSharp
         m_MethodName: HoldImage
         m_Mode: 2
         m_Arguments:
@@ -4041,6 +4059,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1924896808}
   - component: {fileID: 1924896809}
+  - component: {fileID: 1924896810}
   m_Layer: 0
   m_Name: SceneMaster
   m_TagString: Untagged
@@ -4075,21 +4094,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcdc87ee8cc1bd14f81db5df7276b000, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  choice1List:
-  - {fileID: 187085649}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  choice2List:
-  - {fileID: 253175767}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  choice3List:
-  - {fileID: 552084831}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+--- !u!114 &1924896810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924896807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba2d8d13b4a93204fa0a7535bc40c84f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1933822120
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,28 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Weapons : MonoBehaviour
+public class WeaponSender : MonoBehaviour
 {
+    [SerializeField] private GameObject sceneMaster;
     [SerializeField] private Image choice1Spr;
     [SerializeField] private Image choice2Spr;
     [SerializeField] private Image choice3Spr;
 
-    private List<string> weapons;
+    private WeaponHolder weaponHldr;
 
-    private void Update()
+    private void Start()
     {
-        weapons[0] = getChoice1();
-        weapons[1] = getChoice2();
-        weapons[2] = getChoice3();
+        weaponHldr = sceneMaster.GetComponent<WeaponHolder>();
     }
 
+    public void SendWeapons()
+    {
+        weaponHldr.AssignWeapon1(getChoice1(), choice1Spr);
+        weaponHldr.AssignWeapon2(getChoice2(), choice2Spr);
+        weaponHldr.AssignWeapon3(getChoice3(), choice3Spr);
+    }
+    
     private string getChoice1()
     {
-        if (choice1Spr.sprite.name == "Sword_Unpowered")      { return "sword"; }
-        else if (choice1Spr.sprite.name == "Shield")          { return "shield"; }
-        else if (choice1Spr.sprite.name == "Charge_Up")       { return "charge"; }
-        else if (choice1Spr.sprite.name == "Sword_Powered")   { return "swordPowered"; }
-        else                                                  { return ""; }
+        if (choice1Spr.sprite.name == "Sword_Unpowered")    { return "sword"; }
+        else if (choice1Spr.sprite.name == "Shield")        { return "shield"; }
+        else if (choice1Spr.sprite.name == "Charge_Up")     { return "charge"; }
+        else if (choice1Spr.sprite.name == "Sword_Powered") { return "swordPowered"; }
+        else                                                { return ""; }
     }
 
     private string getChoice2()

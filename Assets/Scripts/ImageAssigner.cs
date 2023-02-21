@@ -3,22 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class WeaponAssign : MonoBehaviour
+public class ImageAssigner : MonoBehaviour
 {
     [SerializeField] private GameObject sceneMaster;
     [SerializeField] private Sprite weaponSpr;
 
-    private Selection selectMaster;
     private GameObject image;
 
-    private void Start()
+    public void AssignImage()
     {
-        selectMaster = sceneMaster.GetComponent<Selection>();        
-    }
-
-    public void AssignWeapon()
-    {
-        image = sceneMaster.GetComponent<Selection>().GetButton();
+        image = sceneMaster.GetComponent<ImageHolder>().GetImage();
 
         image.GetComponent<Image>().color = new Color
             (
@@ -30,5 +24,4 @@ public class WeaponAssign : MonoBehaviour
 
         image.GetComponent<Image>().sprite = weaponSpr;
     }
-
 }

@@ -3,12 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Selection : MonoBehaviour
+public class ImageHolder : MonoBehaviour
 {
-    [SerializeField] public List<GameObject> choice1List;
-    [SerializeField] public List<GameObject> choice2List;
-    [SerializeField] public List<GameObject> choice3List;
-
     private GameObject imageHeld;
 
     public void HoldImage(GameObject button)
@@ -17,7 +13,7 @@ public class Selection : MonoBehaviour
         Debug.Log(imageHeld.name);
     }
 
-    public GameObject GetButton()
+    public GameObject GetImage()
     {
         return imageHeld;
     }
