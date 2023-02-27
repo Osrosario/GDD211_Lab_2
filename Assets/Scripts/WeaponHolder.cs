@@ -5,25 +5,51 @@ using UnityEngine.UI;
 
 public class WeaponHolder : MonoBehaviour
 {
-    private Dictionary<string, Image> weapons;
+    [SerializeField] private Image plyrIcon;
+    [SerializeField] private GameObject HB_Fill;
 
-    public Dictionary<string, Image> GetWeapons()
+    [SerializeField] private List<string> weapons = new List<string>();
+    [SerializeField] private List<Sprite> weaponSpr = new List<Sprite>();
+
+    private Slider healthbar;
+
+    private void Start()
+    {
+        healthbar = HB_Fill.GetComponent<Slider>();
+    }
+
+    public void takeDamage(float damage)
+    {
+        float amount = healthbar.value - damage;
+        healthbar.value = amount;
+    }
+
+    public List<string> GetWeapons()
     {
         return weapons;
     }
 
-    public void AssignWeapon1(string weapon, Image weaponImg)
+    public List<Sprite> GetWeaponSpr()
     {
-        weapons.Add(weapon, weaponImg);
+        return weaponSpr;
     }
 
-    public void AssignWeapon2(string weapon, Image weaponImg)
+    public void AssignWeapon(string weapon, Sprite weaponImg)
     {
-        weapons.Add(weapon, weaponImg);
+        weapons.Add(weapon);
+        weaponSpr.Add(weaponImg);
     }
 
-    public void AssignWeapon3(string weapon, Image weaponImg)
+    public void AssignImage(int index)
     {
-        weapons.Add(weapon, weaponImg);
+        plyrIcon.GetComponent<Image>().color = new Color
+            (
+            plyrIcon.GetComponent<Image>().color.r,
+            plyrIcon.GetComponent<Image>().color.b,
+            plyrIcon.GetComponent<Image>().color.g,
+            1
+            );
+
+        plyrIcon.GetComponent<Image>().sprite = weaponSpr[index];
     }
 }

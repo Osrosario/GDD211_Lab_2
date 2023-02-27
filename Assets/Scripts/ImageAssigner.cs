@@ -8,7 +8,7 @@ public class ImageAssigner : MonoBehaviour
     [SerializeField] private GameObject sceneMaster;
     [SerializeField] private Sprite weaponSpr;
 
-    private GameObject image;
+    private Image image;
 
     public void AssignImage()
     {

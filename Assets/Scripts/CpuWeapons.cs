@@ -5,38 +5,76 @@ using UnityEngine.UI;
 
 public class CpuWeapons : MonoBehaviour
 {
-    [SerializeField] private List<Image> weaponSprites;
+    [SerializeField] private Image cpuIcon;
+    [SerializeField] private GameObject HB_Fill;
 
-    private Dictionary<string, Image> weapons;
+    [SerializeField] private List<Sprite> spriteList = new List<Sprite>();
+    [SerializeField] private List<string> weapons = new List<string>();
+    [SerializeField] private List<Sprite> weaponSpr = new List<Sprite>();
 
-    public Dictionary<string, Image> GetWeapons()
+    private Slider healthbar;
+
+    private void Start()
+    {
+        healthbar = HB_Fill.GetComponent<Slider>();
+    }
+
+    public void takeDamage(float damage)
+    {
+        float amount = healthbar.value - damage;
+        healthbar.value = amount;
+    }
+
+    public List<string> GetWeapons()
     {
         return weapons;
     }
-    
+
+    public List<Sprite> GetSprite()
+    {
+        return weaponSpr;
+    }
+
     public void AssignWeapons()
     {
-        for (int i = 0; i > weaponSprites.Count - 1; i++)
+        for (int i = 0; i < spriteList.Count; i++)
         {
-            int index = Random.Range(0, weaponSprites.Count - 2);
-            Image weaponSpr = weaponSprites[index];
+            int index = Random.Range(0, spriteList.Count - 1);
+            Sprite sprite = spriteList[index];
             
-            if (weaponSpr.name == "Sword_Unpowered")
+            if (sprite.name == "Sword_Unpowered")
             {
-                weapons.Add("sword", weaponSpr);
+                weapons.Add("sword");
+                weaponSpr.Add(sprite);
             }
-            else if (weaponSpr.name == "Shield")
+            else if (sprite.name == "Shield")
             {
-                weapons.Add("shield", weaponSpr);
+                weapons.Add("shield");
+                weaponSpr.Add(sprite);
             }
-            else if (weaponSpr.name == "Charge_Up")
+            else if (sprite.name == "Charge_Up")
             {
-                weapons.Add("charge", weaponSpr);
+                weapons.Add("charge");
+                weaponSpr.Add(sprite);
             }
-            else if (weaponSpr.name == "Sword_Powered")
+            else if (sprite.name == "Sword_Powered")
             {
-                weapons.Add("swordPowered", weaponSpr);
+                weapons.Add("swordPowered");
+                weaponSpr.Add(sprite);
             }
         }
+    }
+
+    public void AssignImage(int index)
+    {
+        cpuIcon.GetComponent<Image>().color = new Color
+            (
+            cpuIcon.GetComponent<Image>().color.r,
+            cpuIcon.GetComponent<Image>().color.b,
+            cpuIcon.GetComponent<Image>().color.g,
+            1
+            );
+
+        cpuIcon.GetComponent<Image>().sprite = weaponSpr[index];
     }
 }

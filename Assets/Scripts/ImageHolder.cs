@@ -5,15 +5,14 @@ using UnityEngine.UI;
 
 public class ImageHolder : MonoBehaviour
 {
-    private GameObject imageHeld;
+    private Image imageHeld;
 
-    public void HoldImage(GameObject button)
+    public void HoldImage(Image button)
     {
         imageHeld = button;
-        Debug.Log(imageHeld.name);
     }
 
-    public GameObject GetImage()
+    public Image GetImage()
     {
         return imageHeld;
     }

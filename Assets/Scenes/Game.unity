@@ -253,7 +253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -664,7 +664,7 @@ GameObject:
   - component: {fileID: 258794216}
   - component: {fileID: 258794215}
   m_Layer: 5
-  m_Name: Icon_BG_CPU
+  m_Name: Icon_Sprite_CPU
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1805,7 +1805,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -1954,7 +1954,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -2179,7 +2179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -2272,7 +2272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a511ae79fa809f48ab7df41ea3d7db0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneMaster: {fileID: 1924896807}
+  playerSpr: {fileID: 2107552057}
   choice1Spr: {fileID: 187085651}
   choice2Spr: {fileID: 253175769}
   choice3Spr: {fileID: 552084833}
@@ -2558,7 +2558,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -2659,8 +2659,8 @@ MonoBehaviour:
         m_MethodName: HoldImage
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 253175767}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 253175769}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2720,7 +2720,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -2821,8 +2821,8 @@ MonoBehaviour:
         m_MethodName: HoldImage
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 552084831}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 552084833}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2839,8 +2839,9 @@ GameObject:
   - component: {fileID: 1279124988}
   - component: {fileID: 1279124990}
   - component: {fileID: 1279124989}
+  - component: {fileID: 1279124991}
   m_Layer: 5
-  m_Name: CPU_BG
+  m_Name: CPU_Img
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2905,6 +2906,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1279124987}
   m_CullTransparentMesh: 1
+--- !u!114 &1279124991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279124987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ba0857235223504685513f12a54e6c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cpuIcon: {fileID: 0}
+  spriteList:
+  - {fileID: 21300000, guid: 888569178aecdde4899dab73d46b1202, type: 3}
+  - {fileID: 21300000, guid: 4f614449abf07df4b9f5fc460c764721, type: 3}
+  - {fileID: 21300000, guid: 2f993a0a8f75e5b458a0ae5d8a25e4fd, type: 3}
+  - {fileID: 21300000, guid: a085306e4b3dba1498a0ef1c637920e5, type: 3}
+  weapons: []
+  weaponSpr: []
 --- !u!1 &1355301661
 GameObject:
   m_ObjectHideFlags: 0
@@ -3577,7 +3598,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 1157020725}
   m_HandleRect: {fileID: 0}
-  m_Direction: 0
+  m_Direction: 1
   m_MinValue: 0
   m_MaxValue: 100
   m_WholeNumbers: 0
@@ -3776,7 +3797,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -3882,9 +3903,8 @@ GameObject:
   - component: {fileID: 1778963624}
   - component: {fileID: 1778963626}
   - component: {fileID: 1778963625}
-  - component: {fileID: 1778963627}
   m_Layer: 5
-  m_Name: Icon_BG_PLYR
+  m_Name: Icon_Sprite_PLYR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3948,22 +3968,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1778963623}
   m_CullTransparentMesh: 1
---- !u!114 &1778963627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1778963623}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a511ae79fa809f48ab7df41ea3d7db0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneMaster: {fileID: 0}
-  choice1Spr: {fileID: 187085651}
-  choice2Spr: {fileID: 253175769}
-  choice3Spr: {fileID: 552084833}
 --- !u!1 &1901833930
 GameObject:
   m_ObjectHideFlags: 0
@@ -4018,7 +4022,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -4119,8 +4123,8 @@ MonoBehaviour:
         m_MethodName: HoldImage
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 187085649}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgument: {fileID: 187085651}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4136,7 +4140,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1924896808}
   - component: {fileID: 1924896809}
-  - component: {fileID: 1924896810}
   m_Layer: 0
   m_Name: SceneMaster
   m_TagString: Untagged
@@ -4169,18 +4172,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fcdc87ee8cc1bd14f81db5df7276b000, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1924896810
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1924896807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba2d8d13b4a93204fa0a7535bc40c84f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1933822120
@@ -4616,8 +4607,9 @@ GameObject:
   - component: {fileID: 2107552058}
   - component: {fileID: 2107552060}
   - component: {fileID: 2107552059}
+  - component: {fileID: 2107552061}
   m_Layer: 5
-  m_Name: Player_BG
+  m_Name: Player_Img
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4682,6 +4674,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2107552057}
   m_CullTransparentMesh: 1
+--- !u!114 &2107552061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107552057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba2d8d13b4a93204fa0a7535bc40c84f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plyrIcon: {fileID: 0}
+  weapons: []
+  weaponSpr: []
 --- !u!1 &2120907474
 GameObject:
   m_ObjectHideFlags: 0

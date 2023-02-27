@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class WeaponSender : MonoBehaviour
+public class WeaponAssigner : MonoBehaviour
 {
-    [SerializeField] private GameObject sceneMaster;
+    [SerializeField] private GameObject playerSpr;
     [SerializeField] private Image choice1Spr;
     [SerializeField] private Image choice2Spr;
     [SerializeField] private Image choice3Spr;
@@ -14,14 +14,14 @@ public class WeaponSender : MonoBehaviour
 
     private void Start()
     {
-        weaponHldr = sceneMaster.GetComponent<WeaponHolder>();
+        weaponHldr = playerSpr.GetComponent<WeaponHolder>();
     }
 
     public void SendWeapons()
     {
-        weaponHldr.AssignWeapon1(getChoice1(), choice1Spr);
-        weaponHldr.AssignWeapon2(getChoice2(), choice2Spr);
-        weaponHldr.AssignWeapon3(getChoice3(), choice3Spr);
+        weaponHldr.AssignWeapon(getChoice1(), choice1Spr.sprite);
+        weaponHldr.AssignWeapon(getChoice2(), choice2Spr.sprite);
+        weaponHldr.AssignWeapon(getChoice3(), choice3Spr.sprite);
     }
     
     private string getChoice1()
