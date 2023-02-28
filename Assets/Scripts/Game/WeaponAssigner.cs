@@ -33,9 +33,9 @@ public class WeaponAssigner : MonoBehaviour
 
     public void AssignWeapons()
     {
-        plyrWeapons.AssignWeapon(getChoice1(), choice1Spr.sprite);
-        plyrWeapons.AssignWeapon(getChoice2(), choice2Spr.sprite);
-        plyrWeapons.AssignWeapon(getChoice3(), choice3Spr.sprite);
+        plyrWeapons.AssignSprite(choice1Spr.sprite);
+        plyrWeapons.AssignSprite(choice2Spr.sprite);
+        plyrWeapons.AssignSprite(choice3Spr.sprite);
 
         cpuWeapons.AssignWeapons();
 
@@ -48,32 +48,5 @@ public class WeaponAssigner : MonoBehaviour
         {
             Debug.Log(cpuWeapons.GetWeapons()[i]);
         }
-    }
-    
-    private string getChoice1()
-    {
-        if (choice1Spr.sprite.name == "Sword_Unpowered")    { return "sword"; }
-        else if (choice1Spr.sprite.name == "Shield")        { return "shield"; }
-        else if (choice1Spr.sprite.name == "Charge_Up")     { return "charge"; }
-        else if (choice1Spr.sprite.name == "Sword_Powered") { return "swordPowered"; }
-        else                                                { return ""; }
-    }
-
-    private string getChoice2()
-    {
-        if (choice2Spr.sprite.name == "Sword_Unpowered")    { return "sword"; }
-        else if (choice2Spr.sprite.name == "Shield")        { return "shield"; }
-        else if (choice2Spr.sprite.name == "Charge_Up")     { return "charge"; }
-        else if (choice2Spr.sprite.name == "Sword_Powered") { return "swordPowered"; }
-        else                                                { return ""; }
-    }
-
-    private string getChoice3()
-    {
-        if (choice3Spr.sprite.name == "Sword_Unpowered")    { return "sword"; }
-        else if (choice3Spr.sprite.name == "Shield")        { return "shield"; }
-        else if (choice3Spr.sprite.name == "Charge_Up")     { return "charge"; }
-        else if (choice3Spr.sprite.name == "Sword_Powered") { return "swordPowered"; }
-        else                                                { return ""; }
     }
 }

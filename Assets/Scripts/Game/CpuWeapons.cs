@@ -43,7 +43,7 @@ public class CpuWeapons : MonoBehaviour
         return weaponList;
     }
 
-    public void ChargeState(bool value)
+    public void SetChargeState(bool value)
     {
         isCharged = value;
     }

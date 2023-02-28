@@ -6,14 +6,16 @@ using UnityEngine.UI;
 public class ImageHolder : MonoBehaviour
 {
     private Image imageHeld;
+    private int indexHeld;
 
-    public void HoldImage(Image button)
+    public void HoldImage(Image button, int choiceIndex)
     {
         imageHeld = button;
+        indexHeld = choiceIndex;
     }
 
-    public Image GetImage()
+    public (Image, int) GetImage()
     {
-        return imageHeld;
+        return (imageHeld, indexHeld);
     }
 }

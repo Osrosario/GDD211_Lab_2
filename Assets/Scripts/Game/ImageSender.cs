@@ -1,14 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class ImageSender : MonoBehaviour
 {
-    public UnityEvent ImageSend;
+    [SerializeField] private GameObject sceneMaster;
+    [SerializeField] private Image choiceImage;
+    [SerializeField] private int choiceIndex;
+
+    private ImageHolder imageHolder;
+
+    public void Start()
+    {
+        imageHolder = sceneMaster.GetComponent<ImageHolder>();
+    }
 
     public void SendImage()
     {
-        ImageSend.Invoke();
+        imageHolder.HoldImage(choiceImage, choiceIndex);
     }
 }

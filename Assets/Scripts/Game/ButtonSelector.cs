@@ -9,21 +9,21 @@ public class ButtonSelector : MonoBehaviour
     [SerializeField] private Button choice2Button;
     [SerializeField] private Button choice3Button;
 
-    public void SelectButton1(Button button)
+    public void SelectButton1()
     {
         choice1Button.GetComponent<Image>().color = new Color(255, 149, 0, 1);
         choice2Button.GetComponent<Image>().color = Color.white;
         choice3Button.GetComponent<Image>().color = Color.white;
     }
 
-    public void SelectButton2(Button button)
+    public void SelectButton2()
     {
         choice1Button.GetComponent<Image>().color = Color.white;
         choice2Button.GetComponent<Image>().color = new Color(255, 149, 0, 1);
         choice3Button.GetComponent<Image>().color = Color.white;
     }
 
-    public void SelectButton3(Button button)
+    public void SelectButton3()
     {
         choice1Button.GetComponent<Image>().color = Color.white;
         choice2Button.GetComponent<Image>().color = Color.white;

@@ -347,7 +347,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneMaster: {fileID: 1924896807}
+  player: {fileID: 1778963623}
   weaponSpr: {fileID: 21300000, guid: 4f614449abf07df4b9f5fc460c764721, type: 3}
+  weaponToAssign: shield
 --- !u!1 &86986219
 GameObject:
   m_ObjectHideFlags: 0
@@ -2056,7 +2058,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneMaster: {fileID: 1924896807}
+  player: {fileID: 1778963623}
   weaponSpr: {fileID: 21300000, guid: 2f993a0a8f75e5b458a0ae5d8a25e4fd, type: 3}
+  weaponToAssign: charge
 --- !u!1 &849875427
 GameObject:
   m_ObjectHideFlags: 0
@@ -2205,7 +2209,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneMaster: {fileID: 1924896807}
+  player: {fileID: 1778963623}
   weaponSpr: {fileID: 21300000, guid: a085306e4b3dba1498a0ef1c637920e5, type: 3}
+  weaponToAssign: swordPowered
 --- !u!1 &889654743
 GameObject:
   m_ObjectHideFlags: 0
@@ -2898,10 +2904,10 @@ MonoBehaviour:
       - m_Target: {fileID: 1924896811}
         m_TargetAssemblyTypeName: ButtonSelector, Assembly-CSharp
         m_MethodName: SelectButton2
-        m_Mode: 2
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 1220257423}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2957,21 +2963,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f5f474e701644c4ea9ebad97dc1a74a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ImageSend:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1924896809}
-        m_TargetAssemblyTypeName: ImageHolder, Assembly-CSharp
-        m_MethodName: HoldImage
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 253175769}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  sceneMaster: {fileID: 1924896807}
+  choiceImage: {fileID: 253175769}
+  choiceIndex: 1
 --- !u!1 &1234285133
 GameObject:
   m_ObjectHideFlags: 0
@@ -3072,10 +3066,10 @@ MonoBehaviour:
       - m_Target: {fileID: 1924896811}
         m_TargetAssemblyTypeName: ButtonSelector, Assembly-CSharp
         m_MethodName: SelectButton3
-        m_Mode: 2
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 1234285135}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3131,21 +3125,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f5f474e701644c4ea9ebad97dc1a74a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ImageSend:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1924896809}
-        m_TargetAssemblyTypeName: ImageHolder, Assembly-CSharp
-        m_MethodName: HoldImage
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 552084833}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  sceneMaster: {fileID: 1924896807}
+  choiceImage: {fileID: 552084833}
+  choiceIndex: 2
 --- !u!1 &1279124987
 GameObject:
   m_ObjectHideFlags: 0
@@ -4188,7 +4170,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneMaster: {fileID: 1924896807}
+  player: {fileID: 1778963623}
   weaponSpr: {fileID: 21300000, guid: 888569178aecdde4899dab73d46b1202, type: 3}
+  weaponToAssign: sword
 --- !u!1 &1778963623
 GameObject:
   m_ObjectHideFlags: 0
@@ -4279,6 +4263,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HB_Fill: {fileID: 1455798900}
+  chargeButton: {fileID: 827567629}
+  attackPButton: {fileID: 849875429}
+  confirmButton: {fileID: 889654746}
   weaponList: []
   weaponSprList: []
 --- !u!1 &1901833930
@@ -4381,10 +4368,10 @@ MonoBehaviour:
       - m_Target: {fileID: 1924896811}
         m_TargetAssemblyTypeName: ButtonSelector, Assembly-CSharp
         m_MethodName: SelectButton1
-        m_Mode: 2
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 1901833932}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4440,21 +4427,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f5f474e701644c4ea9ebad97dc1a74a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ImageSend:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1924896809}
-        m_TargetAssemblyTypeName: ImageHolder, Assembly-CSharp
-        m_MethodName: HoldImage
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 187085651}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  sceneMaster: {fileID: 1924896807}
+  choiceImage: {fileID: 187085651}
+  choiceIndex: 0
 --- !u!1 &1924896807
 GameObject:
   m_ObjectHideFlags: 0

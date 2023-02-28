@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class StartBattle : MonoBehaviour
 {
-    [Header("Player Objects")]
+    [Header("Reference(s)")]
     [SerializeField] private GameObject playerSpr;
     [SerializeField] private GameObject cpuSpr;
 
@@ -30,7 +30,6 @@ public class StartBattle : MonoBehaviour
     private PlayerWeapons player;
     private CpuWeapons cpu;
     private int battleCounter = 0;
-    private bool isPlyrCharged = false;
     private bool battle = false;
     private bool isBattleDone = false;
 
@@ -54,7 +53,7 @@ public class StartBattle : MonoBehaviour
         attackButton.interactable = true;
         shieldButton.interactable = true;
 
-        if (isPlyrCharged)
+        if (player.GetChargeState())
         {
             attackPButton.interactable = true;
         }
@@ -82,20 +81,20 @@ public class StartBattle : MonoBehaviour
     {
         if (player.GetWeapons().Contains("charge"))
         {
-            isPlyrCharged = true;
+            player.SetChargeState(true);
         }
         else if (player.GetWeapons().Contains("swordPowered"))
         {
-            isPlyrCharged = false;
+            player.SetChargeState(false);
         }
 
         if (cpu.GetWeapons().Contains("charge"))
         {
-            cpu.ChargeState(true);
+            cpu.SetChargeState(true);
         }
         else if (cpu.GetWeapons().Contains("swordPowered"))
         {
-            cpu.ChargeState(false);
+            cpu.SetChargeState(false);
         }
     }
 
@@ -111,7 +110,7 @@ public class StartBattle : MonoBehaviour
 
     private void ResetGame()
     {
-        player.ClearWeaponList();
+        player.EmptyWeaponList();
         cpu.ClearWeaponList();
         ClearImages();
         EnableChoices();
@@ -152,13 +151,8 @@ public class StartBattle : MonoBehaviour
         }
         else if (plyrWeapon == "swordPowered" && cpuWeapon == "swordPowered")
         {
-            player.takeDamage(5);
-            cpu.takeDamage(5);
-        }
-        else if (cpuWeapon == "sword" && plyrWeapon == "sword")
-        {
-            cpu.takeDamage(5);
-            player.takeDamage(5);
+            player.takeDamage(10);
+            cpu.takeDamage(10);
         }
         else if (cpuWeapon == "sword" && plyrWeapon == "charge")
         {
@@ -181,11 +175,6 @@ public class StartBattle : MonoBehaviour
         else if (cpuWeapon == "swordPowered" && plyrWeapon == "charge")
         {
             player.takeDamage(15);
-        }
-        else if (cpuWeapon == "swordPowered" && plyrWeapon == "swordPowered")
-        {
-            cpu.takeDamage(5);
-            player.takeDamage(5);
         }
     }
 
@@ -215,12 +204,12 @@ public class StartBattle : MonoBehaviour
 
         if (player.GetHealth() <= 0)
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(3);
         }
         
         if (cpu.GetHealth() <= 0)
         {
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(4);
         }
     }
 }
