@@ -14,14 +14,7 @@ public class ImageAssigner : MonoBehaviour
     {
         image = sceneMaster.GetComponent<ImageHolder>().GetImage();
 
-        image.GetComponent<Image>().color = new Color
-            (
-            image.GetComponent<Image>().color.r,
-            image.GetComponent<Image>().color.b,
-            image.GetComponent<Image>().color.g,
-            1
-            );
-
-        image.GetComponent<Image>().sprite = weaponSpr;
+        image.color = new Color(image.color.r, image.color.b, image.color.g, 1);
+        image.sprite = weaponSpr;
     }
 }

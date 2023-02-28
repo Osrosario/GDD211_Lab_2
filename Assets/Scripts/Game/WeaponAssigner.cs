@@ -5,23 +5,49 @@ using UnityEngine.UI;
 
 public class WeaponAssigner : MonoBehaviour
 {
+    [Header("Objects")]
+    [SerializeField] private GameObject sceneMaster;
     [SerializeField] private GameObject playerSpr;
+    [SerializeField] private GameObject cpuSpr;
+
+    [Header("Start Button")]
+    [SerializeField] private Button startButton;
+
+    [Header("Player Choices")]
     [SerializeField] private Image choice1Spr;
     [SerializeField] private Image choice2Spr;
     [SerializeField] private Image choice3Spr;
 
-    private WeaponHolder weaponHldr;
+    private StartBattle battle;
+    private ButtonSelector buttons;
+    private PlayerWeapons plyrWeapons;
+    private CpuWeapons cpuWeapons;
 
     private void Start()
     {
-        weaponHldr = playerSpr.GetComponent<WeaponHolder>();
+        battle = sceneMaster.GetComponent<StartBattle>();
+        buttons = sceneMaster.GetComponent<ButtonSelector>();
+        plyrWeapons = playerSpr.GetComponent<PlayerWeapons>();
+        cpuWeapons = cpuSpr.GetComponent<CpuWeapons>();
     }
 
-    public void SendWeapons()
+    public void AssignWeapons()
     {
-        weaponHldr.AssignWeapon(getChoice1(), choice1Spr.sprite);
-        weaponHldr.AssignWeapon(getChoice2(), choice2Spr.sprite);
-        weaponHldr.AssignWeapon(getChoice3(), choice3Spr.sprite);
+        plyrWeapons.AssignWeapon(getChoice1(), choice1Spr.sprite);
+        plyrWeapons.AssignWeapon(getChoice2(), choice2Spr.sprite);
+        plyrWeapons.AssignWeapon(getChoice3(), choice3Spr.sprite);
+
+        cpuWeapons.AssignWeapons();
+
+        battle.DisableChoices();
+        buttons.UnSelect();
+        startButton.interactable = true;
+        gameObject.GetComponent<Button>().interactable = false;
+
+        for (int i = 0; i < cpuWeapons.GetWeapons().Count; i++)
+        {
+            Debug.Log(cpuWeapons.GetWeapons()[i]);
+        }
     }
     
     private string getChoice1()
